@@ -3,10 +3,11 @@
 <head>
 	<meta charset='utf-8'>
 	<title>The Official GLR Site</title>
-	<link rel='icon' href='G.svg' type='image/x-icon'>
+	<link rel='icon' href='glr.svg' type='image/x-icon'>
 	<link rel='preconnect' href='https://fonts.googleapis.com'>
 	<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
 	<link href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
 	<style>
 		@media only screen and (max-width:800px) {
 			body{
@@ -24,12 +25,20 @@
 		    padding:0;
 		    font-family:'Roboto Condensed',sans-serif;
 		}
-		.s,.c1,.c2,.b,.rt,.rb,.rl,.rr,.sw,.swr1,.swr2,.i,.swrt1,.swrt2,#hr,#f1,#f2{
+		.s,.c1,.c2, i{
 			position:absolute;
 		}
 		.s{
 			top:0;
 			width:100%;
+		}
+		.c1{
+			width:100%;
+			height:2200px;
+			top:70px;
+		}
+		.c2{
+			left:50%;
 		}
 		#home,#c1a{
 			left:0;
@@ -40,46 +49,45 @@
 		#gallery,#c1c{
 			left:200%;
 		}
-		#s4,#c1d{
-			left:300%;
-		}
 		#m{
-			width:1000px;
 		    position:fixed;
-		    top:0;
+			display: flex;
+			width:1400px;
+			top:0;
 		    left:50%;
-		    margin-left:-500px;
+		    margin-left:-700px;
 		    border-radius:0 0 12px 12px;
-		    padding:20px 0;
-		    background-color:#00dddd;
+		    padding:10px 0;
+			align-items:center;
+			justify-content:center;
+			background-color:#00FF88;
 		}
-		.mb{
-			margin:0 10px;
-			border:1px solid #000000;
-			border-radius:8px;
-			padding:5px 5px;
+		.hb{
+			position:relative;
+			display:inline-block;
+			width:100px;
+			height:50px;
+			margin:0 5px;
+			background-color:#000000;
+		}
+		.ab{
+			color: #00ff00;
 			text-decoration:none;
-			background-color:#aaff00;
-		}
-		.c1{
+			font-weight: bold;
+			position:absolute;
+			display:flex;
 			width:100%;
-			height:1200px;
-			top:70px;
+			height:100%;
+			align-items:center;
+			justify-content:center;
 		}
-		.c2{
-			left:50%;
+		.hb:hover{
+			background-color: #ffffff;
 		}
-		#c2a{
-			margin-left:-190px;
-		}
-		#c2b{
-			margin-left:-170px;
-		}
-		#c2c{
-			margin-left:-170px;
-		}
-		#c2d{
-			margin-left:-440px;
+		#bg{
+			position: relative;
+			display: flex;
+			width: 100%;
 		}
 		.i{
 			box-sizing:border-box;
@@ -88,291 +96,35 @@
             border:5px solid #ffff00;
 			cursor:pointer;
         }
-
 		#i01{
 			width:150px;
 			height:170px;
 			top:0;
 			left:0;
 		}
-		#i02{
-			width:150px;
-			height:210px;
-			top:170px;
-			left:0;
-		}
-		#i03{
-			width:230px;
-			height:380px;
-			top:0;
-			left:150px;
-		}
-		#i04{
-			width:140px;
-			height:200px;
-			top:0;
-			left:0;
-		}
-		#i05{
-			width:140px;
-			height:200px;
-			top:200px;
-			left:0;
-		}
-		#i06{
-			width:60px;
-			height:400px;
-			top:0;
-			left:140px;
-		}
-		#i07{
-			width:140px;
-			height:200px;
-			top:0;
-			left:200px;
-		}
-		#i08{
-			width:140px;
-			height:200px;
-			top:200px;
-			left:200px;
-		}
-		#i09{
-			width:240px;
-			height:400px;
-			top:0;
-			left:0;
-		}
-		#i10{
-			width:100px;
-			height:400px;
-			top:0;
-			left:240px;
-		}
-		#i11{
-			width:880px;
-			height:600px;
-			top:0;
-			left:0;
-		}
-		#i12{
-			width:440px;
-			height:240px;
-			top:600px;
-			left:0;
-		}
-		#i13{
-			width:440px;
-			height:240px;
-			top:600px;
-			left:440px;
-		}
-		.b{
-			left:50%;
-		}
-		.b:hover{
-			cursor:pointer;
-			color:#004444;
-		}
-		#b01,#b02,#b03,#b04,#b05,#b06,#b07,#b08{
-			top:420px;
-		}
-		#b09,#b10,#b11{
-			top:880px;
-		}
-		#b01,#b09{
-			margin-left:-105px;
-		}
-		#b02,#b08,#b10{
-			margin-left:-35px;
-		}
-		#b03,#b11{
-			margin-left:35px;
-		}
-		#b04{
-			margin-left:-140px;
-		}
-		#b05{
-			margin-left:-70px;
-		}
-		#b06{
-			margin-left:0;
-		}
-		#b07{
-			margin-left:70px;
-		}
-		.rt,.rb,.rl,.rr{
-			background-color:#334455;
-		}
-		.rt,.rb{
-			width:70px;
-			left:0;
-		}
-		.rl,.rr{
-			width:30px;
-			height:40px;
-			top:30px;
-		}
-		.rt{
-			height:30px;
-			top:0;
-		}
-		.rb{
-			height:40px;
-			top:70px;
-			color:#ffffff;
-			font-size:12px;
-			font-weight:700;
-		}
-		.rl{
-			left:0;
-		}
-		.rr{
-			left:40px;
-		}
-		.rbt{
-			margin-top:7px;
-		}
-		.sw{
-			width:10px;
-			height:60px;
-			top:10px;
-			left:30px;
-			background-color:#00ff00;
-			transition:top 0.25s;
-			transition-timing-function:linear;
-		}
-		.swr1,.swr2{
-			width:100%;
-			height:20px;
-		}
-		.swr1{
-			top:20px;
-			border:2px solid #000000;
-			box-sizing:border-box;
-			background-color:#666666;
-		}
-		.swr2{
-			top:40px;
-			background-color:#ff0000;
-		}
-		.swrt1,.swrt2{
-		    width: 20px;
-		    height: 10px;
-   		    left:0;
-		    margin-left:-7px;
-    		margin-top:5px;
-    		transform: rotate(270deg);
-    		font-size:12px;
-			font-weight:700;
-		}
-		.swrt1{
-			top:0;
-		}
-		.swrt2{
-			top:40px;
-			color:#00ffff;
-		}
-		#d{
-			margin-top:100px;
-			display:none;
-		}
-		#z{
-			position:relative;
-			display:none;
-		}
-		#zb{
-			width:100px;
-			position:fixed;
-			top:50px;
-			left:50%;
-			margin-left:-50px;
-			border:5px solid #ffaa00;
-			border-radius:8px;
-			padding:5px 0;
-			text-decoration:none;
-			background-color:#aa00ff;
-		}
-		#zb:hover{
-			cursor:pointer;
-			background-color:#dd00ff;
-		}
-		#hr{			
-			margin-left:-105px;
-			font-size:15px;
-			text-align:left;
-			display:none;
-		}
-		#f1{
-			width:210px;
-			top:0;
-			left:0;
-			background-color:#ffff00;
-		}
-		#f2{
-			width:205px;
-			top:20px;
-			left:0;
-			padding-left:5px;
-			background-color:#aaaaff;
-			display:none;
-		}
-		#ent{
-			width:20px;
-			background-color:#0000ff;
-		}
-		#ent:hover{
-			cursor:pointer;
-			background-color:#0000cc;
-		}
 	</style>
 </head>
 <body>
-
 <div id='z'><br><a id='zb' href='#c1a' onclick='H()'>Volver</a></div>
-<div id='d'><div class='sketchfab-embed-wrapper'>
-	<iframe id='t' width='800px' height='400px' frameborder='0' allowfullscreen mozallowfullscreen='true' webkitallowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src='https://sketchfab.com/models/03d2c135ad514c4dab425faf535c97a4/embed'></iframe>
-</div></div>
-
 <div class='s' id='home'></div>
 <div class='s' id='certificates'></div>
 <div class='s' id='gallery'></div>
-<div class='s' id='s4'></div>
 
 <div class='c1' id='c1a'>
-	<p style='color:#ffffff'>Welcome to my website. I am Gaddiel Lara Roldán.</p>
-
-	<div class='c2' id='c2a'>
-		<div class='i' id='i01' onclick='G(0,0)'><img id='ii01' src='1an.png' width='100%' height='100%'></div>
-        <div class='i' id='i02' onclick='G(1,0)'><img id='ii02' src='1bn.png' width='100%' height='100%'></div>
-        <div class='i' id='i03' onclick='G(2,0)'><img id='ii03' src='1cn.png' width='100%' height='100%'></div>
-    </div>
-
-    <div class='b' id='b01' onclick='F(0)' onmouseenter='Dhr(1)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw01'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>COMEDOR</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-    
-    <div class='b' id='b02' onclick='F(1)' onmouseenter='Dhr(1)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw02'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>SALA</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-    
-    <div class='b' id='b03' onclick='F(2)' onmouseenter='Dhr(1)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw03'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>SALA DE<br>JUEGOS</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-
+	<p style='color:#ffffff; font-size: 30px;'></p>
+	<div id='bg'><img src='rr3.jpg' width='100%'>
+		<div style='position: absolute; display: flex; background-color: rgba(0, 0, 0, 0.7); width: 100%; height: 100%; justify-content: center; align-items: center;'>
+			<div style='margin-top: -200px;'>
+				<div style="display: block;"><img src='glr.svg' width='400px'></div>
+				<div style="display: block; color: #00ffff; font-family: Goldman; font-size: 50px;">GADDIEL LARA ROLDÁN</div>
+				<div style="display: block; color: #00ffff; font-family: Goldman; font-size: 30px;">Robotics and Digital Systems Engineer</div>
+			</div>
+		</div>
+	</div>
+	<p style='color:#ffffff; font-size: 30px;'>"Innovation distinguishes between a leader and a follower." - Steve Jobs.</p>
 </div>
 
 <div class='c1' id='c1b'>
-
     <div class='c2' id='c2b'>
     	<div class='i' id='i04' onclick='G(3,1)'><img id='ii04' src='2an.png' width='100%' height='100%'></div>
         <div class='i' id='i05' onclick='G(4,1)'><img id='ii05' src='2bn.png' width='100%' height='100%'></div>
@@ -380,123 +132,22 @@
         <div class='i' id='i07' onclick='G(5,1)'><img id='ii06' src='2dn.png' width='100%' height='100%'></div>
         <div class='i' id='i08' onclick='G(6,1)'><img id='ii07' src='2en.png' width='100%' height='100%'></div>
     </div>
-
-    <div class='b' id='b04' onclick='F(3)' onmouseenter='Dhr(2)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw04'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>HABITACIÓN<br>1</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-
-    <div class='b' id='b05' onclick='F(4)' onmouseenter='Dhr(2)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw05'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>HABITACIÓN<br>2</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-    
-    <div class='b' id='b06' onclick='F(5)' onmouseenter='Dhr(2)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw06'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>HABITACIÓN<br>3</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-
-    <div class='b' id='b07' onclick='F(6)' onmouseenter='Dhr(2)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw07'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>HABITACIÓN<br>4</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-
 </div>
 
 <div class='c1' id='c1c'>
-
 	<div class='c2' id='c2c'>
 	    <div class='i' id='i09' onclick='G(7,2)'><img id='ii08' src='3an.png' width='100%' height='100%'></div>
 	    <div class='i' id='i10'><img src='3b.png' width='100%' height='100%'></div>
 	</div>
-
-	<div class='b' id='b08' onclick='F(7)' onmouseenter='Dhr(3)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw08'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>JARDÍN</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-
-</div>
-
-<div class='c1' id='c1d'>
-
-	<div class='c2' id='c2d'>
-	    <div class='i' id='i11' onclick='G(8,3)'><img id='ii09' src='4an.png' width='100%' height='100%'></div>
-	    <div class='i' id='i12' onclick='G(9,3)'><img id='ii10' src='4bn.png' width='100%' height='100%'></div>
-	    <div class='i' id='i13' onclick='G(10,3)'><img id='ii11' src='4cn.png' width='100%' height='100%'></div>
-	</div>
-
-	<div class='b' id='b09' onclick='F(8)' onmouseenter='Dhr(4)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw09'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>ALBERCA</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-    
-    <div class='b' id='b10' onclick='F(9)' onmouseenter='Dhr(4)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw10'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>CANCHA<br>DE TENIS</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-
-    <div class='b' id='b11' onclick='F(10)' onmouseenter='Dhr(4)' onmouseleave='Dhrb()'>
-       	<div class='sw' id='sw11'>
-       		<div class='swr1'></div><div class='swr2'></div><div class='swrt1'>ON</div><div class='swrt2'>OFF</div>
-       	</div>
-       	<div class='rt'></div><div class='rb'><div class='rbt'>GARAGE</div></div><div class='rl'></div><div class='rr'></div>
-    </div>
-
 </div>
 
 <div id='m'>
-        <a class='mb' href='#home'>🏠Home</a>
-        <a class='mb' href='#certificates'>Certificates</a>
-        <a class='mb' href='#gallery'>Gallery</a>
-        <a class='mb' href='#s4'>Exterior</a>
+		<div class='hb'><a class='ab' href='#home'><img src='glr_g.svg' height='80%''></a></div>
+        <div class='hb'><a class='ab' href='#certificates'>Certificates</a></div>
+        <div class='hb'><a class='ab' href='#gallery'>Gallery</a></div>
 </div>
-
-
-<div id='hr' onmouseenter='Dhr(0)' onmouseleave='Dhrb()'>
-	<form id='f2' name='nu'>
-		Prender:<br>
-        <label for='q1'>hr.</label>
-        <input type='number' id='q1' name='q1' min=0 max=24 value=0 autofocus='autofocus'>
-        <label for='q2'>min.</label>
-        <input type='number' id='q2' name='q2' min=0 max=60 value=0>
-        <br>Apagar:<br>
-        <label for='q3'>hr.</label>
-        <input type='number' id='q3' name='q3' min=0 max=24 value=0>
-        <label for='q4'>min.</label>
-        <input type='number' id='q4' name='q4' min=0 max=60 value=0>
-        <div id='ent'>OK</div>
-    </form>
-    <form id='f1'><input type='checkbox' name='ch' onchange='I()'><label for='ch'>Usar Horario</label></form>
-</div>
-
 
 <script>
-	const ids=[
-	'ii01',
-	'ii02',
-	'ii03',
-	'ii04',
-	'ii05',
-	'ii06',
-	'ii07',
-	'ii08',
-	'ii09',
-	'ii10',
-	'ii11'];
 	const idssw=[
 	'sw01',
 	'sw02',
@@ -512,44 +163,7 @@
 	const idss=[
 	'#home',
 	'#certificates',
-	'#gallery',
-	'#s4'];
-	const idsb=[
-	'b01',
-	'b02',
-	'b03',
-	'b04',
-	'b05',
-	'b06',
-	'b07',
-	'b08',
-	'b09',
-	'b10',
-	'b11'];
-	const ioff=[
-	'1an.png',
-	'1bn.png',
-	'1cn.png',
-	'2an.png',
-	'2bn.png',
-	'2dn.png',
-	'2en.png',
-	'3an.png',
-	'4an.png',
-	'4bn.png',
-	'4cn.png'];
-	const ion=[
-	'1a.png',
-	'1b.png',
-	'1c.png',
-	'2a.png',
-	'2b.png',
-	'2d.png',
-	'2e.png',
-	'3a.png',
-	'4a.png',
-	'4b.png',
-	'4c.png'];
+	'#gallery'];
 	const i3d=[
 	'https://sketchfab.com/models/03d2c135ad514c4dab425faf535c97a4/embed',
 	'https://sketchfab.com/models/cff5be149686439f8e9999bbb721b7fd/embed',
@@ -565,16 +179,16 @@
 	];
 	var x=[0,0,0,0,0,0,0,0,0,0,0];
 	var y=0;
-	function F(n){	
-		x[n]=x[n]+1;
-		if (x[n]%2==1){
-			document.getElementById(ids[n]).src=ion[n];
-			document.getElementById(idssw[n]).style.top='30px';
+
+	const tx='Welcome to the Official Gaddiel Lara Roldán (GLR) Site ! Here you will find more about me and my career.'
+	const dt = setInterval(T, 75);
+	var txi = 0;
+	function T() {
+		document.getElementsByTagName('p')[0].innerHTML += tx[txi];
+		if (txi==tx.length-1){
+			clearInterval(dt);
 		}
-		if (x[n]%2==0){
-			document.getElementById(ids[n]).src=ioff[n];
-			document.getElementById(idssw[n]).style.top='10px';
-		}		
+		txi+=1;
 	}
 	function G(m,l){
 		if (document.getElementById('t').src!=i3d[m]){
@@ -584,72 +198,20 @@
 		document.getElementById('c1a').style.display='none';
 		document.getElementById('c1b').style.display='none';
 		document.getElementById('c1c').style.display='none';
-		document.getElementById('c1d').style.display='none';
-		document.getElementById('hr').style.display='none';
 		document.getElementById('m').style.display='none';
 		document.getElementById('d').style.display='block';
 		document.getElementById('z').style.display='block';
 		document.body.style.overflowX='auto';
 	}
 	function H(){
-		if (y%2==1){
-			document.getElementById('hr').style.display='block';
-		}
 		document.getElementById('c1a').style.display=null;
 		document.getElementById('c1b').style.display=null;
 		document.getElementById('c1c').style.display=null;
-		document.getElementById('c1d').style.display=null;
 		document.getElementById('m').style.display=null;
 		document.getElementById('d').style.display='none';
 		document.getElementById('z').style.display='none';
 		document.body.style.overflowX='hidden';
 	}
-	function I(){
-		y=y+1;
-		if (y%2==1){
-			document.getElementById('f2').style.display='inline';
-			document.getElementById('hr').onmouseleave=null;
-			for(var n1=0;n1<idsb.length;n1++){
-				document.getElementById(idsb[n1]).onmouseleave=null;
-			}
-		}
-		if (y%2==0){
-			document.getElementById('f2').style.display='none';
-			document.getElementById('hr').onmouseleave=function(){Dhrb()};
-			for(var n2=0;n2<idsb.length;n2++){
-				document.getElementById(idsb[n2]).onmouseleave=function(){Dhrb()};
-			}
-		}
-	}
-	function Dhr(a){
-		if (a==1){
-			document.getElementById('hr').style.top='600px';
-			document.getElementById('hr').style.left='50%';
-		}
-		if (a==2){
-			document.getElementById('hr').style.top='600px';
-			document.getElementById('hr').style.left='150%';
-		}
-		if (a==3){
-			document.getElementById('hr').style.top='600px';
-			document.getElementById('hr').style.left='250%';
-		}
-		if (a==4){
-			document.getElementById('hr').style.top='1060px';
-			document.getElementById('hr').style.left='350%';
-		}
-		document.getElementById('hr').style.display='block';
-	}
-	function Dhrb(){
-		document.getElementById('hr').style.display='none';
-	}
 </script>
-
 </body>
 </html>
-
-
-
-
-
-
