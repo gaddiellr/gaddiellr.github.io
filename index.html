@@ -25,20 +25,16 @@
 		    padding:0;
 		    font-family:'Roboto Condensed',sans-serif;
 		}
-		.s,.c1,.c2, i{
-			position:absolute;
-		}
 		.s{
+			position:absolute;
 			top:0;
 			width:100%;
 		}
 		.c1{
+			position:absolute;
 			width:100%;
 			height:2200px;
 			top:70px;
-		}
-		.c2{
-			left:50%;
 		}
 		#home,#c1a{
 			left:0;
@@ -90,22 +86,43 @@
 			width: 100%;
 		}
 		.i{
-			box-sizing:border-box;
+			display: inline-block;
+			box-sizing: border-box;
+			height: 300px;
 		}
-		#i01:hover,#i02:hover,#i03:hover,#i04:hover,#i05:hover,#i07:hover,#i08:hover,#i09:hover,#i11:hover,#i12:hover,#i13:hover{
-            border:5px solid #ffff00;
+		.i:hover{
+			border:5px solid #ffff00;
 			cursor:pointer;
         }
-		#i01{
-			width:150px;
-			height:170px;
-			top:0;
-			left:0;
+		#z{
+			position:relative;
+			display:none;
+		}
+		#zb{
+			width:100px;
+			position:fixed;
+			top:50px;
+			left:50%;
+			margin-left:-50px;
+			color: #000000;
+			padding:5px 0;
+			font-weight: bold;
+			background-color:#ffff00;
+		}
+		#zb:hover{
+			cursor:pointer;
+			background-color:#ffffff;
+		}
+		#d{
+			margin-top:100px;
+			height: 120vh;
+			display:none;
 		}
 	</style>
 </head>
 <body>
-<div id='z'><br><a id='zb' href='#c1a' onclick='H()'>Volver</a></div>
+<div id='z'><br><a id='zb' href='#c1a' onclick='H()'>⬅️ Back</a></div>
+<div id='d'><img id='t' height='100%' src=''></div>
 <div class='s' id='home'></div>
 <div class='s' id='certificates'></div>
 <div class='s' id='gallery'></div>
@@ -126,20 +143,22 @@
 </div>
 
 <div class='c1' id='c1b'>
-    <div class='c2' id='c2b'>
-    	<div class='i' id='i04' onclick='G(3,1)'><img id='ii04' src='2an.png' width='100%' height='100%'></div>
-        <div class='i' id='i05' onclick='G(4,1)'><img id='ii05' src='2bn.png' width='100%' height='100%'></div>
-        <div class='i' id='i06'><img src='2c.png' width='100%' height='100%'></div>
-        <div class='i' id='i07' onclick='G(5,1)'><img id='ii06' src='2dn.png' width='100%' height='100%'></div>
-        <div class='i' id='i08' onclick='G(6,1)'><img id='ii07' src='2en.png' width='100%' height='100%'></div>
-    </div>
+	<div style="display: flex; align-items: center; justify-content: center; margin-top: 100px;" >
+		<div>
+		<div class='i' id='i00' onclick='G(0,1)'><img id='ii00' src='degree.jpg' height='100%''></div>
+		<div class='i' id='i01' onclick='G(1,1)'><img id='ii01' src='concentration.jpg' height='100%'></div>
+		<div class='i' id='i02' onclick='G(2,1)'><img id='ii02' src='certificateDL.jpg' height='100%'></div>
+		<div class='i' id='i03' onclick='G(3,1)'><img id='ii03' src='certificatePBI.png' height='100%'></div>
+		<div class='i' id='i04' onclick='G(4,1)'><img id='ii04' src='certificateLESP.jpg' height='100%'></div>
+		<div class='i' id='i05' onclick='G(5,1)'><img id='ii05' src='recognition1.jpg' height='100%'></div>
+		<div class='i' id='i06' onclick='G(6,1)'><img id='ii06' src='recognition2.jpg' height='100%'></div>
+		</div>
+	</div>
 </div>
 
 <div class='c1' id='c1c'>
-	<div class='c2' id='c2c'>
-	    <div class='i' id='i09' onclick='G(7,2)'><img id='ii08' src='3an.png' width='100%' height='100%'></div>
-	    <div class='i' id='i10'><img src='3b.png' width='100%' height='100%'></div>
-	</div>
+	<div class='i' id='i09' onclick='G(7,2)'><img id='ii08' src='3an.png' width='100%' height='100%'></div>
+	<div class='i' id='i10'><img src='3b.png' width='100%' height='100%'></div>
 </div>
 
 <div id='m'>
@@ -149,38 +168,21 @@
 </div>
 
 <script>
-	const idssw=[
-	'sw01',
-	'sw02',
-	'sw03',
-	'sw04',
-	'sw05',
-	'sw06',
-	'sw07',
-	'sw08',
-	'sw09',
-	'sw10',
-	'sw11'];
 	const idss=[
 	'#home',
 	'#certificates',
 	'#gallery'];
 	const i3d=[
-	'https://sketchfab.com/models/03d2c135ad514c4dab425faf535c97a4/embed',
-	'https://sketchfab.com/models/cff5be149686439f8e9999bbb721b7fd/embed',
-	'https://sketchfab.com/models/1937a2a8fa2847f18368cd6b74b43409/embed',
-	'https://sketchfab.com/models/087a594445f441d1ad97b1180a4aae00/embed',
-	'https://sketchfab.com/models/087a594445f441d1ad97b1180a4aae00/embed',
-	'https://sketchfab.com/models/087a594445f441d1ad97b1180a4aae00/embed',
-	'https://sketchfab.com/models/087a594445f441d1ad97b1180a4aae00/embed',
-	'https://sketchfab.com/models/ab9120055d344fc89089a667648fb7c2/embed',
-	'https://sketchfab.com/models/ed2bfad67dde46588dcc3c2342af73b9/embed',
-	'https://sketchfab.com/models/95261a05d99a4085935f38397a5ddf3c/embed',
-	'https://sketchfab.com/models/9f40f26dc0004911bf00ec3b536820db/embed',
+	'degree.jpg',
+	'concentration.jpg',
+	'certificateDL.jpg',
+	'certificatePBI.png',
+	'certificateLESP.jpg',
+	'recognition1.jpg',
+	'recognition2.jpg'
 	];
 	var x=[0,0,0,0,0,0,0,0,0,0,0];
 	var y=0;
-
 	const tx='Welcome to the Official Gaddiel Lara Roldán (GLR) Site ! Here you will find more about me and my career.'
 	const dt = setInterval(T, 75);
 	var txi = 0;
