@@ -20,6 +20,7 @@
 		}
 		body{
 			overflow-x:hidden;
+			overflow-y: hidden;
 		    background-color:#111111;
 		    text-align:center;
 		    padding:0;
@@ -29,20 +30,21 @@
 			position:absolute;
 			top:0;
 			width:100%;
+			height: 100vh;
+			overflow-y: scroll;
 		}
 		.c1{
 			position:absolute;
 			width:100%;
-			/*height:2200px;*/
-			top:100px;
+			top: 100px;
 		}
-		#home,#c1a{
+		#home,#c1a,#c1b,#c1c{
 			left:0;
 		}
-		#certificates,#c1b{
+		#certificates{
 			left:100%;
 		}
-		#gallery,#c1c{
+		#gallery{
 			left:200%;
 		}
 		#m{
@@ -198,10 +200,8 @@
 <body>
 <div id='z'><br><a id='zb' href='#c1a' onclick='H()'>⬅️ Back</a></div>
 <div id='d'><img id='t' height='100%' src=''></div>
-<div class='s' id='home'></div>
-<div class='s' id='certificates'></div>
-<div class='s' id='gallery'></div>
 
+<div class='s' id='home'>
 <div class='c1' id='c1a'>
 	<div id='bg'><img src='rr3.jpg' width='100%'>
 		<div style='position: absolute; display: flex; background-color: rgba(0, 0, 0, 0.7); width: 100%; height: 100%; justify-content: center; align-items: center;'>
@@ -278,9 +278,11 @@
 	<p><br><br></p>
 	<div style='font-size: 30px; font-weight: bold; color: #48fd48;'>"<div style='font-style: italic; display: inline-block;'>Innovation distinguishes between a leader and a follower.</div><div style='display: inline-block;'>" - Steve Jobs.</div></div>
 	<p><br><br></p>
-	<div class='ft'><a class='fb' href='https://www.linkedin.com/in/gaddiel-lara-r/'><img src='li.svg' height='75px'></a> <a class='fb' href='https://github.com/gaddiellr'><img src='gh.svg' height='75px'></a> <a class='fb' href='https://www.youtube.com/@GLRPictures'><img src='yt.svg' height='75px'></a></div>
+	<div class='ft'></div>
+</div>
 </div>
 
+<div class='s' id='certificates'>
 <div class='c1' id='c1b'>
 	<div style="display: flex; align-items: center; justify-content: center; margin-top: 70px;" >
 		<div>
@@ -293,8 +295,13 @@
 		<div class='i' id='i06' onclick='G(6,1)'><img id='ii06' src='recognition2.jpg' height='100%'></div>
 		</div>
 	</div>
+	<p><br><br><br></p>
+	<div class='ft'></div>
 </div>
 
+</div>
+
+<div class='s' id='gallery'>
 <div class='c1' id='c1c'>
 	<div style="display: flex; align-items: center; justify-content: center; margin-top: 70px;" >
 		<div class='cont'>
@@ -318,6 +325,9 @@
 			<a class='rb' onclick='S(1)'>&#10095;</a>
 		</div>
 	</div>
+	<p><br><br><br><br><br></p>
+	<div class='ft'></div>
+</div>
 </div>
 
 <div id='m'>
@@ -340,13 +350,15 @@
 	'recognition1.jpg',
 	'recognition2.jpg'
 	];
-	const tx='Welcome to the Official Gaddiel Lara Roldán (GLR) Site ! Here you will find more about me and my career. I am a Robotics Engineer... but more than a degree, I have a passion for Robotics. From drones to collaborative arms, I love working with all kinds of Robots, challenging my knowledge and creativity to make them more efficient. I also enjoy leading robot design and control projects, which has allowed me to gain experience in fields like Space Exploration Vehicles, Control Systems, Internet of Things, Neural Networks, Artificial Vision, and many more. I have a great enthusiasm for learning new skills and using new technologies that help me stand out.'
+	const ih = "<a class='fb' href='https://www.linkedin.com/in/gaddiel-lara-r/'><img src='li.svg' height='75px'></a> <a class='fb' href='https://github.com/gaddiellr'><img src='gh.svg' height='75px'></a> <a class='fb' href='https://www.youtube.com/@GLRPictures'><img src='yt.svg' height='75px'></a>";
+	const tx='Welcome to the Official Gaddiel Lara Roldán (GLR) Site ! Here you will find more about me and my career. I am a Robotics Engineer... but more than a degree, I have a passion for Robotics. From drones to collaborative arms, I love working with all kinds of Robots, challenging my knowledge and creativity to make them more efficient. I also enjoy leading robot design and control projects, which has allowed me to gain experience in fields like Space Exploration Vehicles, Control Systems, Internet of Things, Neural Networks, Artificial Vision, and many more. I have a great enthusiasm for learning new skills and using new technologies that help me stand out.';
 	const dt = setInterval(T, 60);
 	var txi = 0;
 	var index = -1;
 	S(1);
+	F();
 	function S(n){
-		var x = document.getElementsByClassName('S1');
+		const x = document.getElementsByClassName('S1');
 		index += n;
 		if (index < 0){
 			index = x.length - 1
@@ -358,6 +370,12 @@
 			x[i].style.display = 'none';  
 		}
 		x[index].style.display = 'block';
+	}
+	function F(){
+		const x = document.getElementsByClassName('ft')
+		for (var n = 0; n<x.length; n++){
+			x[n].innerHTML = ih;
+		}
 	}
 	function T() {
 		document.getElementById('in').innerHTML += tx[txi];
@@ -371,6 +389,9 @@
 			document.getElementById('t').src=i3d[m];
 		}
 		document.getElementById('zb').href=idss[l];
+		document.getElementById('home').style.display='none';
+		document.getElementById('certificates').style.display='none';
+		document.getElementById('gallery').style.display='none';
 		document.getElementById('c1a').style.display='none';
 		document.getElementById('c1b').style.display='none';
 		document.getElementById('c1c').style.display='none';
@@ -378,8 +399,12 @@
 		document.getElementById('d').style.display='block';
 		document.getElementById('z').style.display='block';
 		document.body.style.overflowX='auto';
+		document.body.style.overflowY='auto';
 	}
 	function H(){
+		document.getElementById('home').style.display=null;
+		document.getElementById('certificates').style.display=null;
+		document.getElementById('gallery').style.display=null;
 		document.getElementById('c1a').style.display=null;
 		document.getElementById('c1b').style.display=null;
 		document.getElementById('c1c').style.display=null;
@@ -387,6 +412,7 @@
 		document.getElementById('d').style.display='none';
 		document.getElementById('z').style.display='none';
 		document.body.style.overflowX='hidden';
+		document.body.style.overflowY='hidden';
 	}
 </script>
 </body>
