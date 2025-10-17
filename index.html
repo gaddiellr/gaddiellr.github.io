@@ -33,8 +33,8 @@
 		.c1{
 			position:absolute;
 			width:100%;
-			height:2200px;
-			top:70px;
+			/*height:2200px;*/
+			top:100px;
 		}
 		#home,#c1a{
 			left:0;
@@ -61,14 +61,15 @@
 		.hb{
 			position:relative;
 			display:inline-block;
-			width:100px;
-			height:50px;
+			width:200px;
+			height:75px;
 			margin:0 5px;
 			background-color:#000000;
 		}
 		.ab{
 			color: #00ff00;
 			text-decoration:none;
+			font-size: 30px;
 			font-weight: bold;
 			position:absolute;
 			display:flex;
@@ -99,14 +100,13 @@
 			display:none;
 		}
 		#zb{
-			width:100px;
 			position:fixed;
 			top:50px;
 			left:50%;
 			margin-left:-50px;
 			color: #000000;
-			padding:5px 0;
-			font-weight: bold;
+			padding:10px 10px;
+			font-size: 30px;
 			background-color:#ffff00;
 		}
 		#zb:hover{
@@ -122,6 +122,77 @@
 			color:#ffffff;
 			font-size: 30px;
 		}
+		.S1{
+			display: none;
+			width: 100%;
+			height: 100%;
+		}
+		.cont{
+			height: 540px;
+			width: 960px;
+			position: relative;
+			/*border: 5px solid #48fd48;*/
+		}
+		.lb,.rb{
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: 50px;
+			padding: 16px;
+			margin-top: -22px;
+			color: #48fd48;
+			font-weight: bold;
+			font-size: 50px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+		.lb{
+			left: 0;
+			border-radius: 3px 0 0 3px;
+		}
+		.rb{
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+		.lb:hover,.rb:hover{
+			background-color: #f1f1f1;
+			color: black;
+		}
+		.text{
+			position: relative;
+			display: block;
+			bottom: 0px;
+			text-align: center;
+		}
+		.b{
+			display: flex;
+		}
+		.h{
+			display: inline-block;
+			width: 50%;
+			height: 500px;
+		}
+		.ht{
+			width: 90%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.ft{
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			bottom: 0;
+			width: 100%;
+			height: 100px;
+			background-color: #48fd48;
+		}
+		.fb{
+			margin: 0 10px;	
+		}
 	</style>
 </head>
 <body>
@@ -132,34 +203,82 @@
 <div class='s' id='gallery'></div>
 
 <div class='c1' id='c1a'>
-	<p></p>
 	<div id='bg'><img src='rr3.jpg' width='100%'>
 		<div style='position: absolute; display: flex; background-color: rgba(0, 0, 0, 0.7); width: 100%; height: 100%; justify-content: center; align-items: center;'>
-			<div style='margin-top: -250px;'>
-				<div style="display: block;"><img src='glr.svg' width='400px'></div>
+			<div id='in' style='width: 40%; margin-right: 5%; margin-top: -150px; font-size: 30px; color:#ffffff; background-color: rgba(0, 100, 0, 0.2);'></div>
+			<div style='margin-top: -150px;'>
+				<div style="display: block;"><img src='glr.svg' width='300px'></div>
 				<div style="display: block; color: #00ffff; font-family: Goldman; font-size: 50px;">GADDIEL LARA ROLDÁN</div>
 				<div style="display: block; color: #00ffff; font-family: Goldman; font-size: 30px;">Robotics and Digital Systems Engineer</div>
 			</div>
 		</div>
 	</div>
-	<p>I am a Robotics Engineer... but more than a degree, I have a passion for Robotics. From drones to collaborative arms, I love working with all kinds of Robots, challenging my knowledge and creativity to make them more efficient. I also enjoy leading robot design and control projects, which has allowed me to gain experience in fields like Space Exploration Vehicles, Control Systems, Internet of Things, Neural Networks, Artificial Vision, and many more. I have a great enthusiasm for learning new skills and using new technologies that help me stand out. </p>
-	<p>Projects</p>
-	<p>Robot Localization</p>
-	<img src='localization.png' width='50%'>
-	<p>A Puzzlebot was programmed to localize itself in an environment with markers, detecting markers with a camera and obstacles with a LiDAR sensor. The goal was for the robot to move itself to any goal with high precision, without collisions. I was in charge of managing the project and developing the algorithms needed for the obstacle avoidance and a localization filter.</p>
-	<p>Robot Autonomous Drive</p>
-	<img src='signals.png' width='50%'>
-	<p> This project was about programming a Puzzlebot to follow a track, responding to traffic signals. This was achived by programming a signal detection neural network in Python, and running it in real-time with the Puzzlebot camera. My job was to create the track detection program in Python, and implementing the control system for following these tracks, as well as leading the project.</p>
-	<p>Collabotative Bin Picking System</p>
-	<video width="50%" controls><source src="binpick.mp4" type="video/mp4"></video>
-	<p>This was a system capable of automatically classifying fruit and placing it in containers. A pneumatic soft gripper system was developed and attached to the Ufactory Lite6 robot, along with a camera running a neural network. My specific tasks were developing a visual interface with the real-time system data, making a calibration for the camera, creating the state machine robot program and a database storage program. I also set up the system components physically, and connected them with the control computer via MQTT.</p>
-	<p>Drone Signal Tracking</p>
-	<iframe width="640" height="480" src="https://www.youtube.com/embed/seK5mtbAimY?si=aqcB_CWDEKuQiBxt"></iframe>
-	<p>A DJITello Drone was controlled with hand signals made at a camera. A Python program opened the camera, detected hand keypoints using the MediaPipe library, then made the sign detection and sent instructions to the drone. I worked in creating the functions for classifying the hand keypoints, and the drone response coding. </p>
-	<p>Temperature Controller</p>
-	<iframe width="640"	height="480" src="https://www.youtube.com/embed/vbbYimcV4Bo?si=ggkc1oaUof4XxXgQ"></iframe>
-	<p>This was a PID Control System implementation, using a REX-C100 Controller, with the goal of keeping a constant temperature of 20°C for a container with 20 liters of water to be used in a metrology lab. I made some experiments for this project, collecting the data for analysis. I used Matlab for analyzing the system efficiency. I also lead this project and assigned tasks.</p>
-	<p>"Innovation distinguishes between a leader and a follower." - Steve Jobs.</p>
+	<p><br></p>
+	<div style='width: 100%; height: 100px; background-color: #48fd48; font-size: 50px; font-weight: bold; display: flex; align-items: center; justify-content: center;'>PROJECTS</div>
+	<p><br></p>
+	<div class='b'>
+		<div class='h'><img src='localization.png' height='100%'></div>
+		<div class='h'>
+			<div class='ht'>
+				<div style='display: block;'>
+					<div style='color: #ffffff; font-size: 30px; font-weight: bold;'>Robot Localization</div>
+					<p>A Puzzlebot was programmed to localize itself in an environment with markers, detecting markers with a camera and obstacles with a LiDAR sensor. The goal was for the robot to move itself to any goal with high precision, without collisions. I was in charge of managing the project and developing the algorithms needed for the obstacle avoidance and a localization filter.</p>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<p><br></p>
+	<div class='b'>
+		<div class='h'>
+			<div class='ht'>
+				<div style='display: block;'>
+					<div style='color: #ffffff; font-size: 30px; font-weight: bold;'>Robot Autonomous Drive</div>
+					<p>This project was about programming a Puzzlebot to follow a track, responding to traffic signals. This was achived by programming a signal detection neural network in Python, and running it in real-time with the Puzzlebot camera. My job was to create the track detection program in Python, and implementing the control system for following these tracks, as well as leading the project.</p>
+				</div>
+			</div>
+		</div>
+		<div class='h'><img src='signals.png' height='100%'></div>
+	</div>
+	<p><br></p>
+	<div class='b'>
+		<div class='h'><video height="90%" controls><source src="binpick.mp4" type="video/mp4"></video></div>
+		<div class='h'>
+			<div class='ht'>
+				<div style='display: block;'>
+					<div style='color: #ffffff; font-size: 30px; font-weight: bold;'>Collabotative Bin Picking System</div>
+					<p>This was a system capable of automatically classifying fruit and placing it in containers. A pneumatic soft gripper system was developed and attached to the Ufactory Lite6 robot, along with a camera running a neural network. My specific tasks were developing a visual interface with the real-time system data, making a calibration for the camera, creating the state machine robot program and a database storage program. I also set up the system components physically, and connected them with the control computer via MQTT.</p>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<p><br></p>
+	<div class='b'>
+		<div class='h'>
+			<div class='ht'>
+				<div style='display: block;'>
+					<div style='color: #ffffff; font-size: 30px; font-weight: bold;'>Drone Signal Tracking</div>
+					<p>A DJITello Drone was controlled with hand signals made at a camera. A Python program opened the camera, detected hand keypoints using the MediaPipe library, then made the sign detection and sent instructions to the drone. I worked in creating the functions for classifying the hand keypoints, and the drone response coding.</p>
+				</div>
+			</div>
+		</div>
+		<div class='h'><iframe width="640" height="480" src="https://www.youtube.com/embed/seK5mtbAimY?si=aqcB_CWDEKuQiBxt"></iframe></div>
+	</div>
+	<p><br></p>
+	<div class='b'>
+		<div class='h'><iframe width="640"	height="480" src="https://www.youtube.com/embed/vbbYimcV4Bo?si=ggkc1oaUof4XxXgQ"></iframe></div>
+		<div class='h'>
+			<div class='ht'>
+				<div style='display: block;'>
+					<div style='color: #ffffff; font-size: 30px; font-weight: bold;'>Temperature Controller</div>
+					<p>This was a PID Control System implementation, using a REX-C100 Controller, with the goal of keeping a constant temperature of 20°C for a container with 20 liters of water to be used in a metrology lab. I made some experiments for this project, collecting the data for analysis. I used Matlab for analyzing the system efficiency. I also lead this project and assigned tasks.</p>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<p><br><br></p>
+	<div style='font-size: 30px; font-weight: bold; color: #48fd48;'>"<div style='font-style: italic; display: inline-block;'>Innovation distinguishes between a leader and a follower.</div><div style='display: inline-block;'>" - Steve Jobs.</div></div>
+	<p><br><br></p>
+	<div class='ft'><a class='fb' href='https://www.linkedin.com/in/gaddiel-lara-r/'><img src='li.svg' height='75px'></a> <a class='fb' href='https://github.com/gaddiellr'><img src='gh.svg' height='75px'></a> <a class='fb' href='https://www.youtube.com/@GLRPictures'><img src='yt.svg' height='75px'></a></div>
 </div>
 
 <div class='c1' id='c1b'>
@@ -177,8 +296,28 @@
 </div>
 
 <div class='c1' id='c1c'>
-	<div class='i' id='i09' onclick='G(7,2)'><img id='ii08' src='3an.png' width='100%' height='100%'></div>
-	<div class='i' id='i10'><img src='3b.png' width='100%' height='100%'></div>
+	<div style="display: flex; align-items: center; justify-content: center; margin-top: 70px;" >
+		<div class='cont'>
+			<div class='S1'>
+				<img src='r00.jpg' style='height:100%'>
+				<div class='text'><p>Setting up Eagle X Rover's motor controllers.</p></div>
+			</div>
+			<div class='S1'>
+				<img src='r01.jpg' style='height:100%'>
+				<div class='text'><p>Wiring the Eagle X Rover.</p></div>
+			</div>
+			<div class='S1'>
+				<video height="100%" controls><source src="r02.mp4" type="video/mp4"></video>
+				<div class='text'><p>Testing the Eagle X Rover's new gripper.</p></div>
+			</div>
+			<div class='S1'>
+				<video height="100%" controls><source src="ufl.mp4" type="video/mp4"></video>
+				<div class='text'><p>Testing Ufactory LIte6 palletization with simulation.</p></div>
+			</div>
+			<a class='lb' onclick='S(-1)'>&#10094;</a>
+			<a class='rb' onclick='S(1)'>&#10095;</a>
+		</div>
+	</div>
 </div>
 
 <div id='m'>
@@ -201,13 +340,27 @@
 	'recognition1.jpg',
 	'recognition2.jpg'
 	];
-	var x=[0,0,0,0,0,0,0,0,0,0,0];
-	var y=0;
-	const tx='Welcome to the Official Gaddiel Lara Roldán (GLR) Site ! Here you will find more about me and my career.'
-	const dt = setInterval(T, 75);
+	const tx='Welcome to the Official Gaddiel Lara Roldán (GLR) Site ! Here you will find more about me and my career. I am a Robotics Engineer... but more than a degree, I have a passion for Robotics. From drones to collaborative arms, I love working with all kinds of Robots, challenging my knowledge and creativity to make them more efficient. I also enjoy leading robot design and control projects, which has allowed me to gain experience in fields like Space Exploration Vehicles, Control Systems, Internet of Things, Neural Networks, Artificial Vision, and many more. I have a great enthusiasm for learning new skills and using new technologies that help me stand out.'
+	const dt = setInterval(T, 60);
 	var txi = 0;
+	var index = -1;
+	S(1);
+	function S(n){
+		var x = document.getElementsByClassName('S1');
+		index += n;
+		if (index < 0){
+			index = x.length - 1
+		}
+		if (index >= x.length){
+			index = 0
+		}
+		for (var i = 0; i < x.length; i++) {
+			x[i].style.display = 'none';  
+		}
+		x[index].style.display = 'block';
+	}
 	function T() {
-		document.getElementsByTagName('p')[0].innerHTML += tx[txi];
+		document.getElementById('in').innerHTML += tx[txi];
 		if (txi==tx.length-1){
 			clearInterval(dt);
 		}
